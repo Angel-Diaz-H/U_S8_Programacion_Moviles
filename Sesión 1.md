@@ -14,6 +14,7 @@
   - Solo para un sistema operativo.
 - Híbridos.
   - Para múltiples plataformas.
+  - Son web y se pueden adaptar en distintos dispositivos.
 - Progresivas (PWA).
   - No están disponibles en tiendas y funcionan offline.
   - Se utilizan para actividades muy específicas, como en negocios.
