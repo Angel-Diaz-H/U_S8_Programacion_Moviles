@@ -27,3 +27,15 @@
 # Instalación de SQL Server 2019 con Docker.
 
 [Instrucciones para descargar imagen y levantar contenedor.](/Docker/Image-Container.md)
+
+# Parámetros para conectarse a la base de datos.
+
+| Parámetro  | Valor     |
+| ---------- | --------- |
+| Host       | localhost |
+| Puerto     | 5001      |
+| Database   | master    |
+| Usuario    | sa        |
+| Contraseña | Sql2019$  |
+
+![alt text](image-3.png)
