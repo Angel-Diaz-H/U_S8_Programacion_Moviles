@@ -1,0 +1,201 @@
+[
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.AlumnoController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Alumno/Actualizar/{matricula}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matricula",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SeguimientoTramites.Features.Alumnos.Dominio.Dto.ActualizarAlumnoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.AlumnoController",
+    "Method": "Crear",
+    "RelativePath": "api/Alumno/Crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SeguimientoTramites.Features.Alumnos.Dominio.Dto.CrearAlumnoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.AlumnoController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Alumno/Eliminar/{matricula}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matricula",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.AlumnoController",
+    "Method": "ObtenerPorMatricula",
+    "RelativePath": "api/Alumno/ObtenerPorMatricula/{matricula}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matricula",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.AlumnoController",
+    "Method": "ObtenerTodos",
+    "RelativePath": "api/Alumno/ObtenerTodos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.CarreraController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Carrera/Actualizar/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SeguimientoTramites.Features.Carreras.Dominio.Dto.ActualizarCarreraDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.CarreraController",
+    "Method": "Crear",
+    "RelativePath": "api/Carrera/Crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SeguimientoTramites.Features.Carreras.Dominio.Dto.CrearCarreraDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.CarreraController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Carrera/Eliminar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.CarreraController",
+    "Method": "ObtenerPorId",
+    "RelativePath": "api/Carrera/ObtenerPorId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.CarreraController",
+    "Method": "ObtenerTodas",
+    "RelativePath": "api/Carrera/ObtenerTodas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.OperacionesController",
+    "Method": "Mensaje",
+    "RelativePath": "Operaciones",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.OperacionesController",
+    "Method": "Error",
+    "RelativePath": "Operaciones",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeguimientoTramites.Controllers.OperacionesController",
+    "Method": "Sumar",
+    "RelativePath": "Operaciones/Sumar/{Numero1}/{Numero2}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Numero1",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Numero2",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
