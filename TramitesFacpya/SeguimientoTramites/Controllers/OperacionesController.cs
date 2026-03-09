@@ -11,7 +11,7 @@ namespace SeguimientoTramites.Controllers
 
         public OperacionesController(ILogger<OperacionesController> logger)
         {
-            _logger = logger;
+            _logger = logger; 
         }
 
         [HttpGet("Mensaje")]
@@ -26,7 +26,6 @@ namespace SeguimientoTramites.Controllers
         {
             return Ok($"La suma de {Numero1} y {Numero2} es {Numero1 + Numero2}");
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [HttpGet("Error")]
@@ -134,11 +133,6 @@ namespace SeguimientoTramites.Controllers
         [HttpPost("PromedioCalificaciones")]
         public IActionResult PromedioCalificaciones([FromBody] List<int> Calificaciones)
         {
-            if (Calificaciones is null || Calificaciones.Count == 0)
-            {
-                return BadRequest("Debes enviar al menos una calificación.");
-            }
-
             double promedio = Calificaciones.Average();
             string resultado = promedio >= 70 ? "aprobado" : "reprobado";
 
@@ -147,27 +141,44 @@ namespace SeguimientoTramites.Controllers
 
         // Elementos dinámicos, "A4C7X" "D4XS2" "FCSS4"
         // Cuántos números hay en total en todos los elementos
-[HttpPost("ContarNumerosElementos")]
-public IActionResult ContarNumerosElementos([FromBody] List<string> elementos)
-{
-    if (elementos is null || elementos.Count == 0)
-    {
-        return BadRequest("Debes enviar al menos un elemento.");
-    }
+        [HttpPost("ContarNumerosElementos")]
+        public IActionResult ContarNumerosElementos([FromBody] List<string> elementos)
+        {
+            // 1. Juntamos toda la lista en un solo texto gigante, sin espacios
+            string textoUnido = string.Join("", elementos);
+            
+            // 2. Contamos los dígitos de ese texto gigante
+            int totalNumeros = textoUnido.Count(char.IsDigit);
 
-    int totalNumeros = 0;
-    foreach (var s in elementos)
-    {
-        if (string.IsNullOrEmpty(s))
-            continue;
+            return Ok($"El total de números en los elementos es {totalNumeros}.");
+        }
 
-        // Usamos LINQ para contar cada dígito individualmente
-        totalNumeros += s.Count(char.IsDigit);
-    }
+        // 15. Evaluar si un valor es vocal o no.
+        [HttpGet("EsVocal/{valor}")]
+        public IActionResult EsVocal(string valor)
+        {
+            // Convertimos el valor a minúsculas.
+            string minuscula = valor.ToLower();
 
-    return Ok($"El total de números en los elementos es {totalNumeros}.");
-}
+            // Comparamos si el valor exacto es una de las 5 vocales
+            if (minuscula == "a" || minuscula == "e" || minuscula == "i" || minuscula == "o" || minuscula == "u")
+            {
+                return Ok($"El valor '{valor}' SÍ es una vocal.");
+            }
+            
+            // Si meten un "8", un "#" o la palabra "Hola", caerá directo aquí:
+            return Ok($"El valor '{valor}' NO es una vocal.");
+        }
 
-
+        // Realizar un endpoint que permita evaluar si en una cadena de texto se encuentra ya sea un ("*", "/", "-"). Si en caso de no encontrar los elementos mencionados, deberá regresar un "OK" como respuesta, de lo contrario, indicar que la cadena presenta valores inválidos. Ejemplo: "ABDHJF-*" <- Presenta valores inválidos.
+        [HttpPost("ValidarCadena2")]
+        public IActionResult ValidarCadena2([FromBody] string texto)
+        {
+            if (texto.Contains("*") || texto.Contains("?") || texto.Contains("%"))
+            {
+                return Ok("La cadena presenta valores inválidos");
+            }
+            return Ok("OK");
+        }
     }
 }
