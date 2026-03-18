@@ -24,3 +24,7 @@
    Descrip VARCHAR(100) NOT NULL
    )
    ```
+
+## Ejercicios de examen parcial.
+
+**Se encuentran ubicados al final del archivo:** [OperacionesController.cs](/TramitesFacpya/SeguimientoTramites/Controllers/OperacionesController.cs)
