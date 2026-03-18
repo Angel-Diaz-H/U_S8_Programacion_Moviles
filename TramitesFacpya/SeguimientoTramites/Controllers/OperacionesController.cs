@@ -180,5 +180,30 @@ namespace SeguimientoTramites.Controllers
             }
             return Ok("OK");
         }
+
+        // Realizar un endpoint que permita evaluar de una lista de valores determinar cuántas vocales existen.
+        // Ejemplo ["458LPT", "9666F", "IO89"]. Vocales: 3.
+        [HttpPost("ContarVocales")]
+        public IActionResult ContarVocales([FromBody] List<string> elementos) {
+            string textoCompleto = string.Join("", elementos).ToLower();
+            char[] vocales = ['a', 'e', 'i', 'o', 'u'];
+            int totalVocales = textoCompleto.Count(i => vocales.Contains(i));
+            
+            return Ok($"El total de vocales es {totalVocales}.");
+        }
+
+        // Realizar un endpoint que permita evaluar si en una lista de valores se encuentra ya sea:
+        // "*", "/", "-". deberá indicar cuántos valores encontraron. Ejemplo:
+        // ["**dgh", "54sd/", "//dsg", "/dfg"]. 
+        // *: 2, /:4, -:1.
+        [HttpPost("ContarValores")]
+        public IActionResult ContarValores([FromBody] List<string> elementos) {
+            string textoUnido = string.Join("", elementos);
+            int asteriscos = textoUnido.Count(i => i == '*');
+            int diagonales = textoUnido.Count(i => i == '/');
+            int guiones = textoUnido.Count(i => i == '-');
+            
+            return Ok($"*: {asteriscos}, /: {diagonales}, -: {guiones}");
+        }
     }
 }
