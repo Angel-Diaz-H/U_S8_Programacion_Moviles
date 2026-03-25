@@ -27,7 +27,9 @@
 
 ### Consideraciones.
 
-1. Se debe tener una carpeta Frontend, Backend y Volumen en el proyecto.
+1. Se debe tener una carpeta Frontend, Backend y la información del volumen en el proyecto.
+
+   ![alt text](/Notes/Images/image-11.png)
 
 ### Pasos.
 
@@ -96,6 +98,6 @@
       ![alt text](/Notes/Images/image-8.png)
 
 3.  Borrar el archivo test del servicio Carrera.
-4.  Abrir el localhost:4200 en el navegador.
+4.  Abrir localhost el puerto asignado del proyecto.
 5.  Abrir Herramientas de desarrollo y activar Modo responsivo.
     ![alt text](/Notes/Images/image-9.png)
