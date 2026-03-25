@@ -78,21 +78,24 @@
 
 ### Desarrollo del proyecto.
 
-1. Añadir en enviroments la ruta de endpoints.
-   - **Archivo:** [environment.ts](/Frontend/appTramites/src/environments/environment.ts)
-     ```typescript
-     export const environment = {
-       production: false,
-       endpoint: "http://localhost:5183/api",
-     };
-     ```
+1.  Añadir en enviroments la ruta de endpoints.
+    - **Archivo:** [environment.ts](/Frontend/appTramites/src/environments/environment.ts)
+    - **Ruta:** src/environments/environment.ts
 
-2. Crear carpeta de servicios y generar servicio de Carrera.
-   - **Archivo:** [Carrera.service.ts](/Frontend/appTramites/src/app/services/carrera.service.ts)
-   - **Ruta:** src/app/services/carrera.service.ts
-     ![alt text](/Notes/Images/image-8.png)
+      ```typescript
+      export const environment = {
+        production: false,
+        endpoint: "http://localhost:5183/api",
+      };
+      ```
 
-3. Borrar el archivo test del servicio Carrera.
-4. Abrir el localhost:4200 en el navegador.
-5. Abrir Herramientas de desarrollo y activar Modo responsivo.
-   ![alt text](/Notes/Images/image-9.png)
+2.  Crear carpeta de servicios y generar servicio de Carrera.
+    - **Archivo:** [Carrera.service.ts](/Frontend/appTramites/src/app/services/carrera.service.ts)
+    - **Ruta:** src/app/services/carrera.service.ts
+
+      ![alt text](/Notes/Images/image-8.png)
+
+3.  Borrar el archivo test del servicio Carrera.
+4.  Abrir el localhost:4200 en el navegador.
+5.  Abrir Herramientas de desarrollo y activar Modo responsivo.
+    ![alt text](/Notes/Images/image-9.png)
