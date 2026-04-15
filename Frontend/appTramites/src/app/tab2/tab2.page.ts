@@ -132,7 +132,10 @@ export class Tab2Page implements OnInit {
     await alert.present();
   }
 
-  async confirmarEliminar(carrera: Carrera, sliding: IonItemSliding): Promise<void> {
+  async confirmarEliminar(
+    carrera: Carrera,
+    sliding: IonItemSliding,
+  ): Promise<void> {
     await sliding.close();
     const alert = await this.alertCtrl.create({
       header: 'Eliminar carrera',
@@ -156,10 +159,14 @@ export class Tab2Page implements OnInit {
           this.mostrarToast('Carrera creada', 'success');
           this.cargar();
         } else {
-          this.mostrarToast(response.msg || 'No se pudo crear la carrera', 'warning');
+          this.mostrarToast(
+            response.msg || 'No se pudo crear la carrera',
+            'warning',
+          );
         }
       },
-      error: () => this.mostrarToast('Error de conexion con el servidor', 'danger'),
+      error: () =>
+        this.mostrarToast('Error de conexion con el servidor', 'danger'),
     });
   }
 
@@ -173,7 +180,8 @@ export class Tab2Page implements OnInit {
           this.mostrarToast(response.msg || 'No se pudo actualizar', 'warning');
         }
       },
-      error: () => this.mostrarToast('Error de conexion con el servidor', 'danger'),
+      error: () =>
+        this.mostrarToast('Error de conexion con el servidor', 'danger'),
     });
   }
 
@@ -187,7 +195,8 @@ export class Tab2Page implements OnInit {
           this.mostrarToast(response.msg || 'No se pudo eliminar', 'warning');
         }
       },
-      error: () => this.mostrarToast('Error de conexion con el servidor', 'danger'),
+      error: () =>
+        this.mostrarToast('Error de conexion con el servidor', 'danger'),
     });
   }
 
