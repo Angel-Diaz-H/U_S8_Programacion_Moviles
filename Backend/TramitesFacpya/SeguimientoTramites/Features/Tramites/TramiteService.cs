@@ -1,8 +1,8 @@
 using Dapper;
 using FluentValidation;
 using SeguimientoTramites.Common;
-using SeguimientoTramites.Features.Tramites.Dominio.Dto;
 using SeguimientoTramites.Features.Tramites.Dominio.Entidad;
+using SeguimientoTramites.Features.Tramites.Dominio.Dto;
 
 namespace SeguimientoTramites.Features.Tramites;
 
@@ -37,12 +37,12 @@ public class TramiteService
         var tramite = await connection.QueryFirstOrDefaultAsync<Tramite>(sql, new { Id = id });
 
         if (tramite == null)
-            return ApiResponse<Tramite>.Error("Trámite no encontrado");
+            return ApiResponse<Tramite>.Error("Tramite no encontrado");
 
         return ApiResponse<Tramite>.Ok(tramite);
     }
 
-    public async Task <ApiResponse<Tramite>> Crear(CrearTramiteDTO dto)
+    public async Task<ApiResponse<Tramite>> Crear(CrearTramiteDTO dto)
     {
         var validacion = await _crearValidator.ValidateAsync(dto);
         if (!validacion.IsValid)
@@ -50,9 +50,10 @@ public class TramiteService
 
         using var connection = _db.CreateConnection();
         var sql = @"INSERT INTO TRAMITE (Descrip)
-                   VALUES (@Descrip);
-                   SELECT CAST(SCOPE_IDENTITY() AS INT)";
+                    VALUES (@Descrip);
+                    SELECT CAST(SCOPE_IDENTITY() AS INT)";
         var id = await connection.QuerySingleAsync<int>(sql, new { dto.Descrip });
+
         return ApiResponse<Tramite>.Ok(new Tramite { IdTramite = id, Descrip = dto.Descrip });
     }
 
@@ -63,24 +64,24 @@ public class TramiteService
             return ApiResponse<string>.Error(validacion.Errors.First().ErrorMessage);
 
         using var connection = _db.CreateConnection();
-        var sql = @"UPDATE TRAMITE SET Descrip = @Descrip WHERE IdTramite = @Id";
-        var rowsAffected = await connection.ExecuteAsync(sql, new { dto.Descrip, Id = id });
+        var sql = "UPDATE TRAMITE SET Descrip = @Descrip WHERE IdTramite = @Id";
+        var rows = await connection.ExecuteAsync(sql, new { dto.Descrip, Id = id });
 
-        if (rowsAffected == 0)
-            return ApiResponse<string>.Error("Trámite no encontrado");
+        if (rows == 0)
+            return ApiResponse<string>.Error("Tramite no encontrado");
 
-        return ApiResponse<string>.Ok("Trámite actualizado correctamente");
+        return ApiResponse<string>.Ok("");
     }
 
     public async Task<ApiResponse<string>> Eliminar(int id)
     {
         using var connection = _db.CreateConnection();
         var sql = "DELETE FROM TRAMITE WHERE IdTramite = @Id";
-        var rowsAffected = await connection.ExecuteAsync(sql, new { Id = id });
+        var rows = await connection.ExecuteAsync(sql, new { Id = id });
 
-        if (rowsAffected == 0)
-            return ApiResponse<string>.Error("Trámite no encontrado");
+        if (rows == 0)
+            return ApiResponse<string>.Error("Tramite no encontrado");
 
-        return ApiResponse<string>.Ok("Trámite eliminado correctamente");
+        return ApiResponse<string>.Ok("");
     }
 }

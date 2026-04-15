@@ -1,7 +1,0 @@
-{
-  "name": "appTramites",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}

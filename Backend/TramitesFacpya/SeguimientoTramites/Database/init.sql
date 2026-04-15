@@ -11,6 +11,12 @@ CREATE TABLE CARRERA (
     Descrip VARCHAR(100) NOT NULL
 );
 
+
+CREATE TABLE TRAMITE (
+    IdTramite INT IDENTITY(1,1) PRIMARY KEY,
+    Descrip VARCHAR(100) NOT NULL
+);
+
 -- Tabla ALUMNO
 CREATE TABLE ALUMNO (
     Matricula INT IDENTITY(1,1) PRIMARY KEY,
@@ -22,16 +28,14 @@ CREATE TABLE ALUMNO (
     CONSTRAINT FK_Alumno_Carrera FOREIGN KEY (IdCarrera) REFERENCES CARRERA(IdCarrera)
 );
 
--- Datos de prueba carrera
+-- Datos de prueba
 INSERT INTO CARRERA (Descrip) VALUES ('Contador Publico');
 INSERT INTO CARRERA (Descrip) VALUES ('Licenciado en Administracion');
 INSERT INTO CARRERA (Descrip) VALUES ('Licenciado en Tecnologias de Informacion');
 INSERT INTO CARRERA (Descrip) VALUES ('Licenciado en Negocios Internacionales');
 
--- Datos de prueba alumno
 INSERT INTO ALUMNO (Nombre, Correo, Contra, IdCarrera, IsActivo)
 VALUES ('Juan Perez', 'juan.perez@uanl.edu.mx', '123456', 1, 1);
 
 INSERT INTO ALUMNO (Nombre, Correo, Contra, IdCarrera, IsActivo)
 VALUES ('Maria Garcia', 'maria.garcia@uanl.edu.mx', '123456', 3, 1);
-
