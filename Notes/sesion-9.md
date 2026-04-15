@@ -10,3 +10,9 @@ Rama de versión del profesor:
 - Backend: Configuraciones adicionales desarrolladas fuera de la clase.
 
 <!-- Enlace -->
+
+Desarrollo después de clonar el repositorio:
+
+1. Crear servicio de trámites.
+   - Eliminar el archivo test.
+2.
