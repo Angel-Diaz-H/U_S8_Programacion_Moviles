@@ -11,8 +11,13 @@ Código de ejercicios:
 Código de servicios:
 
 - [Servicio de Alumnos](/Backend/TramitesFacpya/SeguimientoTramites/Features/Alumnos/AlumnoService.cs)
+- [Controlador de Alumnos](/Backend/TramitesFacpya/SeguimientoTramites/Controllers/AlumnoController.cs)
+
 - [Servicio de Carreras](/Backend/TramitesFacpya/SeguimientoTramites/Features/Carreras/CarreraService.cs)
+- [Controlador de Carreras](/Backend/TramitesFacpya/SeguimientoTramites/Controllers/CarreraController.cs)
+
 - [Servicio de Trámites](/Backend/TramitesFacpya/SeguimientoTramites/Features/Tramites/TramiteService.cs)
+- [Controlador de Trámites](/Backend/TramitesFacpya/SeguimientoTramites/Controllers/TramiteController.cs)
 
 # Evidencia 3.
 
